@@ -1,0 +1,135 @@
+#include <stdio.h>
+int main()
+{
+	int a = 1234;
+	int*p =&a;
+	*p = *p * 2;
+	printf("%i\n", a);
+}
+
+int main()
+{
+	float a = 1.5;
+	float* p = &a;
+	*p = (*p) * (*p);
+	printf("%f\n", a);
+}
+
+int main()
+{
+	char a = 't';
+	char* p = &a;
+	*p = *p - 32;
+	printf("%c\n", a);
+}
+
+int main()
+{
+	int array[5] = {10, 20, 30, 40, 50};
+	int* p = &array[0];
+
+	for (int i = 0; i < 5; ++i)
+		printf ("%i", array[i]);
+	// *p = *p + 1;
+	//*(p + 3) += 1;
+	//for (int i = 0; i < 5; ++i)
+	//		*(p + i) += 1;
+}
+
+int main()
+{
+	int array[5] = {10, 20, 30, 40, 50};
+	int* p = &array[3];
+
+	for (int i= 0; i < 5; ++i)
+		printf("%i ", array[i]);
+
+	//*(p - 3) += 1;
+	//*(p + 1) += 1;
+	//for (signed int i = -3; i < 2; ++i)
+	//	*(p + i) += 1;
+}
+
+int main()
+{
+	int str[] = "sapere aude";
+	int* p = &str[0];
+
+	printf("%s\n", str);
+	//*p -= 32;
+	//*(p + 1) -= 32;
+	//for (int i; i < 11; ++i)
+	//{
+	//	if(*(p + i) != 32)
+	//		*(p + i) -= 32;
+	//}
+
+}
+
+int main()
+{
+	int a = 1234;
+	int* p = &a;
+	int** q = &p;
+	**q = (**q) * 2;
+	printf("%i\n", a);
+}
+
+struct date
+{
+	int day, month, year;
+};
+typedef struct date Date;
+int main()
+{
+	Date a = {15, 5, 1970};
+	Date* p = &a;
+	(*p).year += 1;
+	printf("%d%d%d\n", a.day, a.month, a.year);
+}
+
+
+
+struct date
+{
+	int day, month, year;
+};
+
+struct movie
+{
+	char title[50];
+	float rating;
+	Date release_date;
+};
+typedef struct movie Movie;
+int main()
+{
+	Movie a = {"Inception", 8.661,{8, 6, 2010}};
+	Movie* p = &a;
+	(*p).rating += 1.0;
+	(*p).release_date.month += 1;
+}
+
+struct date
+{
+	int day, month, year;
+};
+typedef struct date Date;
+
+struct movie
+{
+	char title[50];
+	float rating;
+	struct date release_date;
+};
+typedef struct movie Movie;
+
+int main()
+{
+	Movie array[3] = {{"INception", 8.661, {8, 6, 2010}}, {{"Green Mile"}, 9.062, {6, 12, 1999}}, {"Leon", 8.679, {14, 9, 1994}}};
+	Movie* p = &array[1];
+	int *i = p - 1;
+	(*(i)).rating += 1;
+	int *i = p + 1;
+	(*(i)).rating += 2;
+}

@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+int main()
+{
+	int a = 1234;
+	int* p = &a;
+} 
+
+int main()
+{
+	double a = 12.34;
+	double* p = &a;
+}
+
+int main()
+{
+	char a = ')';
+	char* p = &a;
+}
+
+int main()
+{
+	int array[5] = {10, 20, 30, 40, 50};
+	int* p = &array[0];
+}
+
+int main()
+{
+	char str[20] = "Sapere Aude";
+	char* p = str[7];
+}
+
+struct book
+{
+	char title[50];
+	int pages;
+	float price;
+};
+typedef struct book Book;
+
+int main()
+{
+	Book b = {"Fahrenheit 451", 400, 700.0};
+	Book* pb = &b
+}
+
+int main();
+{
+	float a = 1.2;
+	float* p = &a;
+
+}
+
+struct book
+{
+	char title[50];
+	int pages;
+	float price;
+	float* pprice = &(b.price);
+	char* pc = b.title[9];
+	int* pp = &p;
+};
+typedef struct book Book;
+
+int main()
+{
+	Book b = {"Fahrenheit 451", 400, 700.0};
+	Book pb = &b;
+	int* ppb = &pb;
+}
